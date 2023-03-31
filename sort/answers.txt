@@ -1,0 +1,11 @@
+sort1 uses: Bubble
+
+How do you know?: Omega(n). Because it is slower for reveresed and random because of additional movements. For sorted data it is fast because when moving data, it will not take as long.
+
+sort2 uses: Merge
+
+How do you know?: Theta (nlogn). Because it is the fastest essentially.
+
+sort3 uses: Selection
+
+How do you know?: Omega(n^2) because it is slower for reversed and random, but not for already sorted data. It goes through the entire data to confirm one at a time.

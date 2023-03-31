@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <meta name="viewport" content="initial-scale=1, width=device-width">
+        <title>Trivia!</title>
+        <script>
+            // TODO: Add code to check answers to questions
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <!-- TODO: Add multiple choice question here -->
+                <h3>What is my name?</h3>
+                <p id="demo"></p>
+                    <button id="Hanan">Hanan</button>
+                    <button id="Nusaybah">Nusaybah</button>
+                    <button id="Sophie">Sophie</button>
+                    <script>
+
+                    let b1 = document.querySelector('#Hanan');
+                    document.querySelector('#Hanan').addEventListener('click', function()
+                    {
+                        b1.style.backgroundColor = 'green';
+                        document.getElementById("demo").innerHTML = 'Correct!';
+                    });
+
+                    let b2 = document.querySelector('#Nusaybah');
+                    document.querySelector('#Nusaybah').addEventListener('click', function()
+                    {
+                        b2.style.backgroundColor = 'red';
+                        document.getElementById("demo").innerHTML = 'Incorrect!';
+                    });
+
+                    let b3 = document.querySelector('#Sophie');
+                    document.querySelector('#Sophie').addEventListener('click', function()
+                    {
+                        b3.style.backgroundColor = 'red';
+                        document.getElementById("demo").innerHTML = 'Incorrect!';
+                    });
+
+                    </script>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <!-- TODO: Add free response question here -->
+                <h3>What is my name?</h3>
+                <p id="next"></p>
+                <form>
+                    <input autocomplete="off" type="search"></input>
+                    <button id="check">Check Answer</button>
+                </form>
+                <script>
+
+                    let b4 = document.querySelector('input');
+                    document.querySelector('#check').addEventListener('click', function()
+                    {
+                        let input = document.querySelector('input')
+                        if (input.value == "Hanan")
+                        {
+                            b4.style.backgroundColor = 'green';
+                            document.getElementById("next").innerHTML = 'Correct!';
+                        }
+                        else
+                        {
+                            b4.style.backgroundColor = 'red';
+                            document.getElementById("next").innerHTML = 'Incorrect!';
+                        }
+                    });
+
+                    </script>
+            </div>
+        </div>
+    </body>
+</html>
