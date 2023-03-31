@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Google Maps
+{% endblock %}
+
+{% block main %}
+        <div class="mb-3">
+
+            <iframe
+            width="600"
+            height="450"
+            style="border:0"
+            loading="lazy"
+            allowfullscreen
+            referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA_bMeb32v_GHlNE5TGCSmxNrxw5oCDoaI
+                &q=toronto" id="gm">Google Maps
+            </iframe>
+
+            <script>
+                let newlocation = "https://www.google.com/maps/embed/v1/place?key=AIzaSyA_bMeb32v_GHlNE5TGCSmxNrxw5oCDoaI&q=" + Q
+                document.getElementById("gm").src = newlocation;
+            </script>
+
+        <form action="/maps" method="post">
+            <div class="mb-3">
+                <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="location" name="location" placeholder="Where to?" type="text">
+            </div>
+            <button class="btn btn-primary" type="submit">Submit</button>
+        </form>
+
+{% endblock %}

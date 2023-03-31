@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+
+    <div class="mb-3">
+        <form action="/" method="post">
+            <div class="mb-3">
+                <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="location" name="location" placeholder="Location" type="text">
+            </div>
+            <button class="btn btn-primary" type="submit">Add to Bucket List</button>
+        </form>
+
+            <table class="table table-hover table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">Number</th>
+                        <th scope="col">Location</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- TODO: Loop through the database entries to display them in this table -->
+                    {% for i in bl %}
+                    <tr>
+                        <td>{{i["id"]}}</td>
+                        <td>{{i["location"]}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+{% endblock %}

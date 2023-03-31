@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+        <div class="mb-3">
+            <table class="table table-hover table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">Symbol</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Shares</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- TODO: Loop through the database entries to display them in this table -->
+                    {% for stock in stocks %}
+                    <tr>
+                        <td>{{stock["stock"]}}</td>
+                        <td>{{stock["name"]}}</td>
+                        <td>{{stock["shares"]}}</td>
+                        <td>{{stock["price"] | usd}}</td>
+                        <td>{{(stock["shares"] * stock["price"]) | usd}}</td>
+                    </tr>
+                    {% endfor %}
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <th scope="row">Cash</td>
+                        <td>{{cash[0]["cash"] | usd}}</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <th scope="row">TOTAL</td>
+                        <td>{{total | usd}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+{% endblock %}
